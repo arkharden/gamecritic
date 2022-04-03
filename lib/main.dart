@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
 
+import 'gamepages/Witcher3.dart';
+import 'gamepages/RDR2.dart';
+import 'gamepages/Valhalla.dart';
+import 'gamepages/Zelda.dart';
+import 'gamepages/DyingLight.dart';
+import 'gamepages/EldenRing.dart';
+import 'gamepages/Horizon.dart';
+import 'gamepages/Pokemon.dart';
+import 'gamepages/TombRaider.dart';
 
 void main() => runApp(MaterialApp(
-      home: GameRatingApp(),
+      home: OyunKritik(),
     ));
 
-class GameRatingApp extends StatefulWidget {
+class OyunKritik extends StatefulWidget {
   @override
-  _GameRatingAppState createState() => _GameRatingAppState();
+  _OyunKritikState createState() => _OyunKritikState();
 }
 
-class _GameRatingAppState extends State<GameRatingApp> {
+class _OyunKritikState extends State<OyunKritik> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,13 +29,13 @@ class _GameRatingAppState extends State<GameRatingApp> {
         backgroundColor: Color(0xFF1B2C3B),
         title: Text("Oyun Kritik"),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.more_vert,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          )
+          //  IconButton(
+          //    icon: Icon(
+          //      Icons.more_vert,
+          //      color: Colors.white,
+          //    ),
+          //    onPressed: () {},
+          //  )
         ],
       ),
       //Creating the Chip list
@@ -116,24 +125,61 @@ class _GameRatingAppState extends State<GameRatingApp> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard(
-                        "Elden Ring", "96/100", "assets/images/eldenring.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const EldenRing()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard("Elden Ring", "96/100",
+                          "assets/images/eldenring.png"),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard("Dying Light 2", "76/100", "assets/images/dyinglight.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DyingLight()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard("Dying Light 2", "76/100",
+                          "assets/images/dyinglight.png"),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard("Pokemon Arceus", "82/100",
-                        "assets/images/pokemon.jpg"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Pokemon()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard("Pokemon Arceus", "82/100",
+                          "assets/images/pokemon.jpg"),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard("Horizon Forbidden West", "88/100",
-                        "assets/images/horizon.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Horizon()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard("Horizon Forbidden West", "88/100",
+                          "assets/images/horizon.png"),
+                    ),
                   ),
                 ],
               ),
@@ -165,30 +211,73 @@ class _GameRatingAppState extends State<GameRatingApp> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard(
-                        "Witcher 3", "93/100", "assets/images/witcher3.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Witcher3()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard(
+                          "Witcher 3", "93/100", "assets/images/witcher3.png"),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard("Red Dead Redemption 2", "97/100",
-                        "assets/images/rdr2.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const RDR2()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard("Red Dead Redemption 2", "97/100",
+                          "assets/images/rdr2.png"),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard("Assasins Creed Valhalla", "84/100",
-                        "assets/images/valhalla.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Valhalla()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard("Assasins Creed Valhalla", "84/100",
+                          "assets/images/valhalla.png"),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard(
-                        "Zelda BOTW", "97/100", "assets/images/zelda.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Zelda()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard(
+                          "Zelda BOTW", "97/100", "assets/images/zelda.png"),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: GameCard("Tomb Raider", "86/100",
-                        "assets/images/tombraider.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const TombRaider()),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: GameCard("Tomb Raider", "86/100",
+                          "assets/images/tombraider.png"),
+                    ),
                   ),
                   SizedBox(
                     height: 22.0,
@@ -202,17 +291,15 @@ class _GameRatingAppState extends State<GameRatingApp> {
     );
   }
 
-Widget GameCard(String gameName, String rate, String imgPath) {
+  Widget GameCard(String gameName, String rate, String imgPath) {
     return InkWell(
-      onTap: () {
-
+      //onTap: () {
       // Navigator.of(context).push(
       //      MaterialPageRoute(
       //        builder: (context) =>
       //            dyinglight(),
       //      ),);
-
-      },
+      // },
       child: Column(
         children: <Widget>[
           Card(
@@ -244,5 +331,4 @@ Widget GameCard(String gameName, String rate, String imgPath) {
       ),
     );
   }
-
 }
