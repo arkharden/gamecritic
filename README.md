@@ -1,6 +1,6 @@
 # gameratingapp
 
-A new Flutter project.
+Mezuniyet öncesi son viraj.
 
 ## Getting Started
 
